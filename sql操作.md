@@ -44,7 +44,7 @@ select * FROM stu where id>3;
 
 ————java连接数据库
 
-1.注册驱动
+1.注册驱动（可选）
 
 ```java
 DriverManger.register(new Driver());
@@ -86,4 +86,37 @@ stmt.execute(sql);
 stmt.close();
 conn.close();
 ```
+
+#### 使用PreparedStatement进行操作
+
+使用预编译语句可以防止SQL注入。
+
+前三步同上
+
+4.获取PreparedStatement对象
+
+```java
+PreparedStatement ps = connection.prepareStatement("update student set name = ? where id = ?");
+```
+
+5.替换预编译语句中的？
+
+```java
+ps.setString(1, "李四");
+ps.setInt(2, 2);
+```
+
+6.执行sql语句
+
+```java
+ps.execute();
+```
+
+7.关闭资源
+
+```java
+ps.close();
+```
+
+
 
