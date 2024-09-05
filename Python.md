@@ -6,11 +6,11 @@
 大小写敏感。
 ```
 
-##### 行间缩进
+### 行间缩进
 
 ​	python不使用{}表示代码块，而是同一代码块包含相同的缩进空格数。
 
-##### 基本数据类型
+### 基本数据类型
 
 ```
 数值类型：整数，浮点数，复数
@@ -26,7 +26,7 @@
 
 
 
-### 字符串
+# 字符串
 
 ##### 定义：
 
@@ -75,7 +75,35 @@ str.replace(old,new) //返回str的副本，old字串被替换未new
 str.center(width,[fillchar]) //字符串根据width居中，fillchar可选
 str.strip(chars) //从str去掉其左侧和右侧chars列出的字符
 str.join(iter) //在iter变量除最后一个元素外每个元素后增加一个str
+str.title() //首字母大写
 ```
+
+格式化输出
+
+```python
+name=input()
+# 方法1
+print('I am {} '.format(name))
+
+# 方法2：位置一一对应
+print('I am {0}'.format(name))
+
+# 方法3:参数
+print('I am {A}'.format(A=name))
+
+# 方法4:文本用 %s 占位符
+print('I am %s'%name)
+
+
+小数指定位数
+a = float(input())
+
+print(f'{a:.2f}')
+print('%.2f' % a)
+print('{:.2f}'.format(a))
+```
+
+
 
 ### 集合
 
@@ -149,6 +177,25 @@ list.count(X)	//	计数，返回x在列表中出现的次数
 list.sort(key = None, reverse = False)	//对列表中的元素进行适当排序， reverse = True为降序， reverse = False为升序（默认）
 del list[2]	 //删除列表第三个元素
 del list  //删除列表
+```
+
+### 字典
+
+常用方法
+
+```
+d.keys()  返回一个列表，列表包含字典的所有键的信息
+d.values()		返回一个列表，列表包含字典的所有值的信息
+d.items()  	返回一个列表，列表元素为字典的键和值构成的元组
+d.len(d)	返回字典的长度，即字典元素的数目
+d.str(d)	输出字典可打印的字符串
+d.copy()	复制一个字典
+d.zip()		合并列表组成字典
+d.update()		将一个字典的元素添加到另一个字典中
+d.clear()	删除字典中全部的键值对，使之变为空字典
+del d[k]	删除字典d中键k对应的值
+k in d		判断键k是否在字典d中
+len(d)	返回字典的个数
 ```
 
 
